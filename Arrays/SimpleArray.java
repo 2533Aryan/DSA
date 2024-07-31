@@ -70,9 +70,6 @@ public class SimpleArray<T> implements SimpleArrayInterface<T> {
     // Check if the array is empty
     @Override
     public boolean isEmpty() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isEmpty'");
+        return size == 0;
     }
-    
-
 }
