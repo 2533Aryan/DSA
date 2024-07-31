@@ -29,16 +29,23 @@ public class SimpleArray<T> implements SimpleArrayInterface<T> {
         if(index < 0 && index >= size){
             throw new ArrayIndexOutOfBoundsException("Out of Bound");
         }
-        
+
         return array[index];
     }
 
+
+    // Set an element at a specific index
     @Override
     public void set(int index, T element) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'set'");
+        if(index < 0 && index >= size){
+            throw new ArrayIndexOutOfBoundsException("Out of Bound");
+        }
+
+        array[index] = element;
     }
 
+
+    // Remove an element at a specific index
     @Override
     public void remove(int index) {
         // TODO Auto-generated method stub
