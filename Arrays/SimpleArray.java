@@ -17,7 +17,7 @@ public class SimpleArray<T> implements SimpleArrayInterface<T> {
     @Override
     public void add(T element) {
         if (size == array.length){
-            throw new ArrayIndexOutOfBoundsException("Arrat is full");
+            throw new ArrayIndexOutOfBoundsException("Array is full");
         }
 
         array[size++] = element;
