@@ -6,6 +6,7 @@ public class SimpleArray<T> implements SimpleArrayInterface<T> {
     private T[] array;
 
     
+    @SuppressWarnings("unchecked")
     public SimpleArray(int capacity){
         array = (T[]) new Object[capacity];
         size = 0;
