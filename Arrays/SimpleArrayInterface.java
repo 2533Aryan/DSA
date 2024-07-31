@@ -1,3 +1,5 @@
+package Arrays;
+
 // SimpleArrayInterface.java
 public interface SimpleArrayInterface<T> {
     void add(T element);        // Add an element to the array

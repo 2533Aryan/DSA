@@ -1,3 +1,5 @@
+package Arrays;
+
 public class SimpleArray<T> implements SimpleArrayInterface<T> {
 
     @Override

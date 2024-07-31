@@ -1,3 +1,5 @@
+package Arrays;
+
 // SimpleArrayTester.java
 public class SimpleArrayTester {
     public static void main(String[] args) {
