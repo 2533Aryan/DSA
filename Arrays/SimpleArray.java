@@ -2,11 +2,25 @@ package Arrays;
 
 public class SimpleArray<T> implements SimpleArrayInterface<T> {
 
+    private int size;
+    private T[] array;
+
+    
+    public SimpleArray(int capacity){
+        array = (T[]) new Object[capacity];
+        size = 0;
+    }
+
+
     @Override
     public void add(T element) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
+        if (size == array.length){
+            throw new ArrayIndexOutOfBoundsException("Arrat is full");
+        }
+
+        array[size++] = element;
     }
+
 
     @Override
     public T get(int index) {
