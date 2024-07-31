@@ -63,10 +63,11 @@ public class SimpleArray<T> implements SimpleArrayInterface<T> {
     // Get the number of elements in the array
     @Override
     public int size() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'size'");
+        return size;
     }
 
+
+    // Check if the array is empty
     @Override
     public boolean isEmpty() {
         // TODO Auto-generated method stub
