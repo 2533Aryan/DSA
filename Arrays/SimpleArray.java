@@ -48,10 +48,19 @@ public class SimpleArray<T> implements SimpleArrayInterface<T> {
     // Remove an element at a specific index
     @Override
     public void remove(int index) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'remove'");
+        if(index < 0 && index >= size){
+            throw new ArrayIndexOutOfBoundsException("Out of Bound");
+        }
+
+        for(int i = index; i < size-1; i++){
+            array[i] = array[i+1];
+        }
+
+        array[--size] = null;  // remove last element
     }
 
+
+    // Get the number of elements in the array
     @Override
     public int size() {
         // TODO Auto-generated method stub
