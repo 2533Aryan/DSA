@@ -12,6 +12,7 @@ public class SimpleArray<T> implements SimpleArrayInterface<T> {
     }
 
 
+    // Add an element to the array
     @Override
     public void add(T element) {
         if (size == array.length){
@@ -22,10 +23,14 @@ public class SimpleArray<T> implements SimpleArrayInterface<T> {
     }
 
 
+    // Get an element at a specific index
     @Override
     public T get(int index) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
+        if(index < 0 && index >= size){
+            throw new ArrayIndexOutOfBoundsException("Out of Bound");
+        }
+        
+        return array[index];
     }
 
     @Override
