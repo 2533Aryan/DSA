@@ -11,3 +11,4 @@ public interface ArrayInterface<T> {
     boolean isEmpty();                // Check if the array is empty
     void clear();                     // Remove all elements from the array
 }
+
