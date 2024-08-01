@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.StaticArray;
 
 // SimpleArrayTester.java
 public class SimpleArrayTester {

@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.StaticArray;
 
 // SimpleArrayInterface.java
 public interface SimpleArrayInterface<T> {

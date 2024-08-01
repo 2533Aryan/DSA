@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.StaticArray;
 
 public class SimpleArray<T> implements SimpleArrayInterface<T> {
 
