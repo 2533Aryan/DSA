@@ -76,11 +76,10 @@ public class DynamicArray<T> implements ArrayInterface<T> {
         array[size--] = null;
     }
 
-    
+
     @Override
     public int size() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'size'");
+        return size;
     }
 
     @Override
