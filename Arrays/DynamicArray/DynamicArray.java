@@ -96,9 +96,14 @@ public class DynamicArray<T> implements ArrayInterface<T> {
         }
     }
 
-    
+
+    @SuppressWarnings("unchecked")
     private void resize(){
+        int newCapacity = CAPACITY * 2;
+        T[] newArray = (T[]) new Object[newCapacity];
         
-    }
-        
+        for(int i = 0; i < size; i++){
+            newArray[i] = array[i];
+        }
+    }        
 }
