@@ -1,7 +1,17 @@
 package Arrays.DynamicArray;
 
 public class DynamicArray<T> implements ArrayInterface<T> {
+    
+    private int size;
+    private T[] array;
+    private static final int CAPACITY = 10;
 
+    @SuppressWarnings("unchecked")
+    DynamicArray(){
+        array = (T[]) new Object[CAPACITY];
+        size = 0;
+    }
+    
     @Override
     public void add(T element) {
         // TODO Auto-generated method stub
@@ -48,6 +58,10 @@ public class DynamicArray<T> implements ArrayInterface<T> {
     public void clear() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'clear'");
+    }
+
+    private void resize(){
+        
     }
         
 }
