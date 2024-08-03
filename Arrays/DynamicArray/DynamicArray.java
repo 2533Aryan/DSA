@@ -96,6 +96,7 @@ public class DynamicArray<T> implements ArrayInterface<T> {
         }
     }
 
+    
     private void resize(){
         
     }
