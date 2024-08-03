@@ -82,12 +82,13 @@ public class DynamicArray<T> implements ArrayInterface<T> {
         return size;
     }
 
+
     @Override
     public boolean isEmpty() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isEmpty'");
+        return size == 0;
     }
 
+    
     @Override
     public void clear() {
         // TODO Auto-generated method stub
