@@ -52,19 +52,31 @@ public class DynamicArray<T> implements ArrayInterface<T> {
         return array[index];
     }
 
-    
+
     @Override
     public void set(int index, T element) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'set'");
+        if (index < 0 || index >= size){
+            throw new IndexOutOfBoundsException("Out of Bound");
+        }
+
+        array[index] = element;
     }
+
 
     @Override
     public void remove(int index) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'remove'");
+        if (index < 0 || index >= size){
+            throw new IndexOutOfBoundsException("Out of Bound");
+        }
+
+        for(int i = index; i < (size-1); i--){
+            array[i] = array[i+1];
+        }
+
+        array[size--] = null;
     }
 
+    
     @Override
     public int size() {
         // TODO Auto-generated method stub
