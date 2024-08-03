@@ -88,11 +88,12 @@ public class DynamicArray<T> implements ArrayInterface<T> {
         return size == 0;
     }
 
-    
+
     @Override
     public void clear() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'clear'");
+        for(int i = 0; i < size; i++){
+            array[i] = null;
+        }
     }
 
     private void resize(){
