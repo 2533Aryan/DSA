@@ -34,8 +34,8 @@ public class DynamicArray<T> implements ArrayInterface<T> {
             resize();
         }
 
-        for(int i = size; i <= index; i--){
-            array[i+1] = array[i];
+        for(int i = size; i < index; i--){
+            array[i] = array[i-1];
         }
 
         array[index] = element;
