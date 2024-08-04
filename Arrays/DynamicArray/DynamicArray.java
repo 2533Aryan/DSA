@@ -1,4 +1,5 @@
 package Arrays.DynamicArray;
+import java.util.Arrays;
 
 public class DynamicArray<T> implements ArrayInterface<T> {
     
@@ -99,16 +100,20 @@ public class DynamicArray<T> implements ArrayInterface<T> {
     }
 
 
-    @SuppressWarnings("unchecked")
+    // @SuppressWarnings("unchecked")
+    // private void resize(){
+    //     int newCapacity = array.length * 2;
+    //     T[] newArray = (T[]) new Object[newCapacity];
+        
+    //     for(int i = 0; i < size; i++){
+    //         newArray[i] = array[i];
+    //     }
+
+    //     array = newArray;
+    // }
     private void resize(){
         int newCapacity = array.length * 2;
-        T[] newArray = (T[]) new Object[newCapacity];
-        
-        for(int i = 0; i < size; i++){
-            newArray[i] = array[i];
-        }
-
-        array = newArray;
+        array = Arrays.copyOf(array, newCapacity);
     }        
 }
 
