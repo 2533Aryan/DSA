@@ -94,6 +94,8 @@ public class DynamicArray<T> implements ArrayInterface<T> {
         for(int i = 0; i < size; i++){
             array[i] = null;
         }
+
+        size = 0;
     }
 
 
