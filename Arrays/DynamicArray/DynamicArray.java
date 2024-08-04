@@ -73,7 +73,7 @@ public class DynamicArray<T> implements ArrayInterface<T> {
             array[i] = array[i+1];
         }
 
-        array[size--] = null;
+        array[--size] = null;
     }
 
 
