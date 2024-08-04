@@ -30,7 +30,7 @@ public class DynamicArray<T> implements ArrayInterface<T> {
             throw new IndexOutOfBoundsException("Out of Bound");
         }
 
-        if (index > array.length){
+        if (size == array.length){
             resize();
         }
 
@@ -99,7 +99,7 @@ public class DynamicArray<T> implements ArrayInterface<T> {
 
     @SuppressWarnings("unchecked")
     private void resize(){
-        int newCapacity = CAPACITY * 2;
+        int newCapacity = array.length * 2;
         T[] newArray = (T[]) new Object[newCapacity];
         
         for(int i = 0; i < size; i++){
