@@ -69,7 +69,7 @@ public class DynamicArray<T> implements ArrayInterface<T> {
             throw new IndexOutOfBoundsException("Out of Bound");
         }
 
-        for(int i = index; i < (size-1); i--){
+        for(int i = index; i < (size-1); i++){
             array[i] = array[i+1];
         }
 
