@@ -111,3 +111,4 @@ public class DynamicArray<T> implements ArrayInterface<T> {
         array = newArray;
     }        
 }
+
