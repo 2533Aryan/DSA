@@ -52,11 +52,6 @@
   - **Methods**: Can be called without creating an instance of the class.
   - **Blocks**: Static initialization blocks are used to initialize static variables.
 
-- **Other Keywords**:
-  - **`final`**: See above.
-  - **`abstract`**: See above.
-  - **`synchronized`**: See above.
-  - **`volatile`**: See above.
 
 ### 5. Why Use `final static` on `INT_CAPACITY` Instead of `int capacity`?
 
@@ -125,6 +120,7 @@ private void resize() {
     array = Arrays.copyOf(array, array.length * 2);
 }
 ```
+
 This method is functionally equivalent to your implementation but is simpler and utilizes the built-in `Arrays.copyOf` method for clarity and efficiency.
 
 ### 10. Explanation of Keywords
