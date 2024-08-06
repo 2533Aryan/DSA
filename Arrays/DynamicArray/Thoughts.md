@@ -44,7 +44,7 @@
   - Indicates that a variable's value will be modified by different threads, ensuring visibility of changes across threads.
 
 
-### 5. Why Use `final static` on `INT_CAPACITY` Instead of `int capacity`?
+### 3. Why Use `final static` on `INT_CAPACITY` Instead of `int capacity`?
 
 - **`final static`**:
   - `final`: Ensures the initial capacity value cannot be changed after it's set.
@@ -55,7 +55,7 @@
   - Does not represent a constant value.
 
 
-### 2. What is `Arrays.copyOf`?
+### 4. What is `Arrays.copyOf`?
 
 - **`Arrays.copyOf`**: A utility method in Java that creates a new array by copying the original array's contents up to a specified length.
 - **Usage in `resize` Method**:
@@ -68,7 +68,7 @@
   - It doubles the capacity and creates a new array with the new capacity, copying all elements from the old array into the new one.
 
 
-### 6. What is `System.arraycopy`?
+### 5. What is `System.arraycopy`?
 
 - **`System.arraycopy`**: A native method that copies elements from one array to another more efficiently than a manual loop.
   - **Syntax**:
@@ -85,7 +85,8 @@
 - **Why not use a loop?**
   - A loop can be less efficient, especially for large arrays. `System.arraycopy` is optimized and faster.
 
-### 8. Syntax for `Arrays.copyOf` and Related Methods
+
+### 6. Syntax for `Arrays.copyOf` and Related Methods
 
 - **Syntax**:
   ```java
@@ -106,6 +107,7 @@
   - **`Arrays.equals(array1, array2)`**: Compares two arrays for equality.
   - **`Arrays.toString(array)`**: Returns a string representation of the array.
 
+
 ### 7. Why Use `>` in Insert Method If Statement Instead of `>=` Like in Get and Set Methods?
 
 - **Insert Method**:
@@ -117,8 +119,7 @@
   - **Reason**: Ensures the index is within the range of existing elements (0 to `size - 1`). Accessing `size` would be out of bounds as it's the next available position.
 
 
-
-### 9. Your Resize Method
+### 8. Your Resize Method
 
 Your resize method manually copies elements from the old array to the new array. Here's a more concise version using `Arrays.copyOf`:
 
@@ -129,3 +130,5 @@ private void resize() {
 ```
 
 This method is functionally equivalent to your implementation but is simpler and utilizes the built-in `Arrays.copyOf` method for clarity and efficiency.
+
+
