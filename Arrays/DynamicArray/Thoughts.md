@@ -95,15 +95,56 @@
   - **Condition**: `if (index >= size)`
   - **Reason**: Ensures the index is within the range of existing elements (0 to `size - 1`). Accessing `size` would be out of bounds as it's the next available position.
 
-### Summary
+### 8. Syntax for `Arrays.copyOf` and Related Methods
 
-- **`array.length`**: Capacity of the array.
-- **`size`**: Number of elements currently in the array.
-- **`INT_CAPACITY`**: Initial capacity, typically a constant.
-- **`Arrays.copyOf`**: Creates a new array with copied elements.
-- **`final` and `static` Keywords**: Used for constants and class-level variables.
-- **`System.arraycopy`**: Efficient method to copy array elements.
-- **Insert Method Index Check**: Ensures valid insertion point, considering valid range.
+- **Syntax**:
+  ```java
+  T[] newArray = Arrays.copyOf(array, newCapacity);
+  ```
+  - **Parameters**:
+    - `array`: The original array.
+    - `newCapacity`: The length of the new array.
 
+- **Import Statement**:
+  ```java
+  import java.util.Arrays;
+  ```
 
+- **Other Useful Methods in `Arrays` Class**:
+  - **`Arrays.sort(array)`**: Sorts the array.
+  - **`Arrays.fill(array, value)`**: Fills the array with a specified value.
+  - **`Arrays.equals(array1, array2)`**: Compares two arrays for equality.
+  - **`Arrays.toString(array)`**: Returns a string representation of the array.
 
+### 9. Your Resize Method
+
+Your resize method manually copies elements from the old array to the new array. Here's a more concise version using `Arrays.copyOf`:
+
+```java
+private void resize() {
+    array = Arrays.copyOf(array, array.length * 2);
+}
+```
+This method is functionally equivalent to your implementation but is simpler and utilizes the built-in `Arrays.copyOf` method for clarity and efficiency.
+
+### 10. Explanation of Keywords
+
+- **`final` Keyword**:
+  - **Variable**: Prevents reassignment after initial assignment.
+  - **Method**: Prevents overriding in subclasses.
+  - **Class**: Prevents inheritance.
+
+- **`static` Keyword**:
+  - **Variable**: Belongs to the class, shared among all instances.
+  - **Method**: Can be called without creating an instance of the class.
+  - **Block**: Executes once when the class is loaded.
+
+- **`abstract` Keyword**:
+  - **Method**: Declares a method without an implementation (to be implemented in subclasses).
+  - **Class**: Cannot be instantiated, used as a base class.
+
+- **`synchronized` Keyword**:
+  - Ensures that a method or block is accessed by only one thread at a time, useful in concurrent programming.
+
+- **`volatile` Keyword**:
+  - Indicates that a variable's value will be modified by different threads, ensuring visibility of changes across threads.
