@@ -20,6 +20,41 @@
 - **`size`**: Do not use it to refer to the total capacity of the array (use `array.length` instead).
 - **`INT_CAPACITY`**: Do not use it dynamically after array creation; it's a fixed initial value.
 
+
+### 2. Keywords
+
+- **`final` Keyword**:
+  - **Variable**: Prevents reassignment after initial assignment.
+  - **Method**: Prevents overriding in subclasses.
+  - **Class**: Prevents inheritance.
+
+- **`static` Keyword**:
+  - **Variable**: Belongs to the class, shared among all instances.
+  - **Method**: Can be called without creating an instance of the class.
+  - **Block**: Executes once when the class is loaded.
+
+- **`abstract` Keyword**:
+  - **Method**: Declares a method without an implementation (to be implemented in subclasses).
+  - **Class**: Cannot be instantiated, used as a base class.
+
+- **`synchronized` Keyword**:
+  - Ensures that a method or block is accessed by only one thread at a time, useful in concurrent programming.
+
+- **`volatile` Keyword**:
+  - Indicates that a variable's value will be modified by different threads, ensuring visibility of changes across threads.
+
+
+### 5. Why Use `final static` on `INT_CAPACITY` Instead of `int capacity`?
+
+- **`final static`**:
+  - `final`: Ensures the initial capacity value cannot be changed after it's set.
+  - `static`: Ensures the initial capacity is a class-level constant, not instance-specific.
+
+- **`int capacity`**: 
+  - An instance variable that can be changed.
+  - Does not represent a constant value.
+
+
 ### 2. What is `Arrays.copyOf`?
 
 - **`Arrays.copyOf`**: A utility method in Java that creates a new array by copying the original array's contents up to a specified length.
@@ -32,36 +67,6 @@
   ```
   - It doubles the capacity and creates a new array with the new capacity, copying all elements from the old array into the new one.
 
-### 3. What is the `final` Keyword and Other Keywords?
-
-- **`final` Keyword**:
-  - **Variables**: Prevents reassignment. Once assigned a value, it cannot be changed.
-  - **Methods**: Prevents overriding. The method cannot be overridden in subclasses.
-  - **Classes**: Prevents inheritance. The class cannot be subclassed.
-
-- **Other Keywords**:
-  - **`static`**: Belongs to the class rather than instances of the class.
-  - **`abstract`**: Declares a method without an implementation (to be implemented in subclasses) or a class that cannot be instantiated.
-  - **`synchronized`**: Ensures that a method or block of code is accessed by only one thread at a time.
-  - **`volatile`**: Indicates that a variable's value will be modified by different threads.
-
-### 4. What is the `static` Keyword and Other Keywords?
-
-- **`static` Keyword**:
-  - **Variables**: Shared among all instances of the class.
-  - **Methods**: Can be called without creating an instance of the class.
-  - **Blocks**: Static initialization blocks are used to initialize static variables.
-
-
-### 5. Why Use `final static` on `INT_CAPACITY` Instead of `int capacity`?
-
-- **`final static`**:
-  - `final`: Ensures the initial capacity value cannot be changed after it's set.
-  - `static`: Ensures the initial capacity is a class-level constant, not instance-specific.
-
-- **`int capacity`**: 
-  - An instance variable that can be changed.
-  - Does not represent a constant value.
 
 ### 6. What is `System.arraycopy`?
 
@@ -79,16 +84,6 @@
   
 - **Why not use a loop?**
   - A loop can be less efficient, especially for large arrays. `System.arraycopy` is optimized and faster.
-
-### 7. Why Use `>` in Insert Method If Statement Instead of `>=` Like in Get and Set Methods?
-
-- **Insert Method**:
-  - **Condition**: `if (index > size)`
-  - **Reason**: Ensures the index for insertion is within the valid range (0 to `size`). Inserting at `size` means adding an element at the end, which is valid.
-
-- **Get and Set Methods**:
-  - **Condition**: `if (index >= size)`
-  - **Reason**: Ensures the index is within the range of existing elements (0 to `size - 1`). Accessing `size` would be out of bounds as it's the next available position.
 
 ### 8. Syntax for `Arrays.copyOf` and Related Methods
 
@@ -111,6 +106,18 @@
   - **`Arrays.equals(array1, array2)`**: Compares two arrays for equality.
   - **`Arrays.toString(array)`**: Returns a string representation of the array.
 
+### 7. Why Use `>` in Insert Method If Statement Instead of `>=` Like in Get and Set Methods?
+
+- **Insert Method**:
+  - **Condition**: `if (index > size)`
+  - **Reason**: Ensures the index for insertion is within the valid range (0 to `size`). Inserting at `size` means adding an element at the end, which is valid.
+
+- **Get and Set Methods**:
+  - **Condition**: `if (index >= size)`
+  - **Reason**: Ensures the index is within the range of existing elements (0 to `size - 1`). Accessing `size` would be out of bounds as it's the next available position.
+
+
+
 ### 9. Your Resize Method
 
 Your resize method manually copies elements from the old array to the new array. Here's a more concise version using `Arrays.copyOf`:
@@ -122,25 +129,3 @@ private void resize() {
 ```
 
 This method is functionally equivalent to your implementation but is simpler and utilizes the built-in `Arrays.copyOf` method for clarity and efficiency.
-
-### 10. Explanation of Keywords
-
-- **`final` Keyword**:
-  - **Variable**: Prevents reassignment after initial assignment.
-  - **Method**: Prevents overriding in subclasses.
-  - **Class**: Prevents inheritance.
-
-- **`static` Keyword**:
-  - **Variable**: Belongs to the class, shared among all instances.
-  - **Method**: Can be called without creating an instance of the class.
-  - **Block**: Executes once when the class is loaded.
-
-- **`abstract` Keyword**:
-  - **Method**: Declares a method without an implementation (to be implemented in subclasses).
-  - **Class**: Cannot be instantiated, used as a base class.
-
-- **`synchronized` Keyword**:
-  - Ensures that a method or block is accessed by only one thread at a time, useful in concurrent programming.
-
-- **`volatile` Keyword**:
-  - Indicates that a variable's value will be modified by different threads, ensuring visibility of changes across threads.
